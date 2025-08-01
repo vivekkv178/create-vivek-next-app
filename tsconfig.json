@@ -9,8 +9,7 @@
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "strict": true,
-    "types": ["node", "fs-extra"]
+    "strict": true
   },
   "include": ["bin/**/*"]
 }
