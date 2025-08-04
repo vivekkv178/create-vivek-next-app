@@ -1,6 +1,6 @@
 # create-vivek-next-app
 
-A custom **Next.js + TypeScript** starter kit with a predefined folder structure and built-in CLI tools. Run it instantly using `npx` from GitHub — no need to publish it on npm.
+A custom **Next.js + TypeScript** starter kit with a predefined folder structure and built-in CLI tools. Run it instantly using `npx` from GitHub.
 
 ---
 
@@ -10,7 +10,7 @@ A custom **Next.js + TypeScript** starter kit with a predefined folder structure
 * ⚡ TypeScript support
 * 🎨 UI powered by [ShadCN UI](https://ui.shadcn.com)
 * 🧱 Includes Tailwind CSS setup
-* 🧪 Bootstrap instantly via GitHub without npm publish
+* 🧪 Bootstrap instantly via GitHub
 
 ---
 
@@ -57,7 +57,7 @@ npm run dev
 If you're modifying the template repo itself:
 
 ```bash
-git clone https://github.com/your-username/create-vivek-next-app.git
+git clone https://github.com/vivekkv178/create-vivek-next-app.git
 cd create-vivek-next-app
 npm install
 npx ts-node bin/index.ts test-app
