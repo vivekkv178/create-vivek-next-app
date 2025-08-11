@@ -6,11 +6,12 @@ A custom **Next.js + TypeScript** starter kit with a predefined folder structure
 
 ## 🚀 Features
 
-* 📁 Custom folder structure: `/app`, `/components`, `/lib`, etc.
-* ⚡ TypeScript support
-* 🎨 UI powered by [ShadCN UI](https://ui.shadcn.com)
-* 🧱 Includes Tailwind CSS setup
-* 🧪 Bootstrap instantly via GitHub
+- 📁 Custom folder structure: `/app`, `/components`, `/lib`, etc.
+- ⚡ TypeScript support
+- 🎨 UI powered by [ShadCN UI](https://ui.shadcn.com)
+- 🧱 Includes Tailwind CSS setup
+- 🛠️ Built-in CLI commands for scaffolding layouts and routes
+- 🧪 Bootstrap instantly via GitHub
 
 ---
 
@@ -40,14 +41,37 @@ my-app/
 ```bash
 npx github:@vivekkv178/create-vivek-next-app my-app
 ```
+
 ---
 
-### 2. Install & Start
+### 2. Configure Private Library Access
+
+The template depends on private npm package:
+
+1. Rename `sample.env` to `.env`.
+2. Update `.env` file with required keys.
+3. Update `.npmrc` with github access token to access private package.
+4. Install the private package
+```bash
+npm install @vivekkv178/library
+```
+
+---
+
+## 📦 CLI Commands
+
+### Create a New Route
 
 ```bash
-cd my-app
-npm install
-npm run dev
+npx github:@vivekkv178/create-vivek-next-app create-route <route-name>
+```
+
+---
+
+### Create a New Layout
+
+```bash
+npx github:@vivekkv178/create-vivek-next-app create-layout <layout-name>
 ```
 
 ---
@@ -67,7 +91,5 @@ npx ts-node bin/index.ts test-app
 
 ## 🔧 TODOs
 
-* [ ] Add CLI commands for scaffolding routes (`npm run create-route <name>`)
-* [ ] Add support for `layout.tsx`, `loading.tsx`, etc. in route creation
-* [ ] Add Prettier + ESLint configs
-* [ ] Support Git-based versioning.
+- [ ] Add Prettier + ESLint configs
+- [ ] Support Git-based versioning

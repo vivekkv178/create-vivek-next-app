@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import { CONSTANTS } from "@/lib/constants";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import StoreProvider from "@/lib/StoreProvider";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -38,7 +40,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={outfit.className}>{children}</body>
+      <body className={outfit.className}>
+        <ThemeProvider attribute="class" defaultTheme="light">
+          <StoreProvider>{children}</StoreProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

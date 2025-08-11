@@ -1,29 +1,30 @@
 #!/usr/bin/env ts-node
 
-import path from "path";
-import fs from "fs-extra";
-import { execSync } from "child_process";
+import { createLayout } from "./create-layout";
+import { createProject } from "./create-project";
+import { createRoute } from "./create-route";
 
 async function main() {
-  const [, , projectName = "my-app"] = process.argv;
-  const currentDir = process.cwd();
-  const templateDir = path.join(__dirname, "..", "template");
-  const destination = path.join(currentDir, projectName);
+  const [, , command, arg] = process.argv;
 
-  console.log(`\n📁 Creating Next.js app in: ${destination}`);
-
-  try {
-    await fs.copy(templateDir, destination);
-    console.log("✅ Template files copied.");
-
-    process.chdir(destination);
-    console.log("\n📦 Installing dependencies...\n");
-    execSync("npm install", { stdio: "inherit" });
-
-    console.log(`\n🚀 Project setup complete!\n`);
-    console.log(`👉 Next steps:\n  cd ${projectName}\n  npm run dev\n`);
-  } catch (err) {
-    console.error("❌ Error setting up project:", err);
+  if (!command) {
+    // Default behaviour: create a project
+    await createProject(command);
+  } else if (command === "create-route") {
+    if (!arg) {
+      console.error("❌ Please provide a route name.");
+      process.exit(1);
+    }
+    await createRoute(arg);
+  } else if (command === "create-layout") {
+    if (!arg) {
+      console.error("❌ Please provide a layout name.");
+      process.exit(1);
+    }
+    await createLayout(arg);
+  } else {
+    // If first arg isn't a command, treat it as project name
+    await createProject(command);
   }
 }
 
