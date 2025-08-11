@@ -3,7 +3,7 @@ import fs from "fs-extra";
 
 export async function createLayout(layoutName: string) {
   const projectDir = process.cwd();
-  const layoutTemplateDir = path.join(projectDir, "template", "app", "(app)");
+  const layoutTemplateDir = path.join("..", "template", "app", "(app)");
   const newLayoutDir = path.join(projectDir, "app", `(${layoutName})`);
 
   try {
