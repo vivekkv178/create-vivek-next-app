@@ -4,7 +4,7 @@ import fs from "fs-extra";
 export async function createRoute(routeName: string) {
   const currentDir = process.cwd();
   const routeTemplateDir = path.join(
-    currentDir,
+    "..",
     "template",
     "app",
     "(app)",
