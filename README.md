@@ -74,8 +74,6 @@ npx github:@vivekkv178/create-vivek-next-app create-route <route-name>
 npx github:@vivekkv178/create-vivek-next-app create-layout <layout-name>
 ```
 
----
-
 ## 🧪 Local Development (for the template)
 
 If you're modifying the template repo itself:
@@ -87,9 +85,21 @@ npm install
 npx ts-node bin/index.ts test-app
 ```
 
----
+## **Install a Specific Version** (via Git tag)
+
+```bash
+npx github:vivekkv178/create-vivek-next-app#1.0.0 my-app
+```
+
+🔹 Replace `1.0.0` with the desired tag (see version table below).
+
+## 🏷️ Available Versions
+
+| Version    | Changes                     |
+| ---------- | --------------------------- |
+| **1.0.0**  | Basic Structure             |
+| **2.0.0**  | Custom Layouts & Routes     |
 
 ## 🔧 TODOs
 
 - [ ] Add Prettier + ESLint configs
-- [ ] Support Git-based versioning
